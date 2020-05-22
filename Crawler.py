@@ -13,10 +13,10 @@ skip = False
 while True:
     try:
         with open("linklist.txt", "r") as f:
-            AllLinks = f.readlines()
-
-        for i in AllLinks:
-            AllLinks[AllLinks.index(i)] = i.strip("\n")
+            Rawlinks = f.readlines()
+        AllLinks = []
+        for i in Rawlinks:
+            AllLinks.append(i.strip("\n")
 
         for i in AllLinks:
             if skip == True:
