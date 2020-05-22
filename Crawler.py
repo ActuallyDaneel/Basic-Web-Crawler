@@ -40,35 +40,11 @@ while True:
                         print(link)
                         with open("linklist.txt", "a+", encoding="utf-8") as f:
                             f.write(link + "\n")
-#                            Data = ReadLines()
-#                            f.truncate()
-#                            Data.append(link + "\n")
-#                            try:
-#                                Data.remove(SeedLink + "\n")
-#                            except:
-#                                try:
-#                                    Data.remove(SeedLink)
-#                                except:
-#                                    pass
-#                            for i in Data:
-#                                f.write(i)
-
+                      
                     elif link.startswith("http://") and link not in AllLinks:
                         print(link)
-#                        Data = ReadLines()
                         with open("linklist.txt", "a+", encoding="utf-8") as f:
                             f.write(link + "\n")
-#                            f.truncate()
-#                            Data.append(link + "\n")
-#                            try:
-#                                Data.remove(SeedLink + "\n")
-#                            except:
-#                                try:
-#                                    Data.remove(SeedLink)
-#                                except:
-#                                    pass
-#                            for i in Data:
-#                                f.write(i)
 
                     elif link.startswith("/") and link not in AllLinks:
                         print(link)
@@ -78,20 +54,8 @@ while True:
 
                         
                         link = LinkBase + link
-#                        Data = ReadLines()
                         with open("linklist.txt", "a+", encoding="utf-8") as f:
                             f.write(link + "\n")
-#                            f.truncate()
-#                            Data.append(link + "\n")
-#                            try:
-#                                Data.remove(SeedLink + "\n")
-#                            except:
-#                                try:
-#                                    Data.remove(SeedLink)
-#                                except:
-#                                    pass
-#                            for i in Data:
-#                                f.write(i)
 
     except Exception as e:
         print(f"error : {e}")
