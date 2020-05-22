@@ -9,6 +9,12 @@ def ReadLines():
     with open("linklist.txt", "r") as f:
         Data = f.readlines()
     return Data
+
+def ApplyChanges(ThingToWrite):
+    with open("linklist.txt", "a+", encoding="utf-8") as f:
+        f.write(ThingToWrite + "\n")
+
+
 skip = False
 while True:
     try:
@@ -38,13 +44,11 @@ while True:
                 if link != None:
                     if link.startswith("https://") and link not in AllLinks:
                         print(link)
-                        with open("linklist.txt", "a+", encoding="utf-8") as f:
-                            f.write(link + "\n")
+                        ApplyChanges(link)
                       
                     elif link.startswith("http://") and link not in AllLinks:
                         print(link)
-                        with open("linklist.txt", "a+", encoding="utf-8") as f:
-                            f.write(link + "\n")
+                        ApplyChanges(link)
 
                     elif link.startswith("/") and link not in AllLinks:
                         print(link)
@@ -54,8 +58,7 @@ while True:
 
                         
                         link = LinkBase + link
-                        with open("linklist.txt", "a+", encoding="utf-8") as f:
-                            f.write(link + "\n")
+                        ApplyChanges(link)
 
     except Exception as e:
         print(f"error : {e}")
